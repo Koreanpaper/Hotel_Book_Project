@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${hotel.id} ? '호텔 수정' : '새 호텔 추가'"></title>
+    <link rel="stylesheet" type="text/css" href="/login.css">
+</head>
+<body>
+<h1 th:text="${hotel.id} ? '호텔 수정 하기' : '새 호텔 추가'"></h1>
+<form th:action="${hotel.id} ? @{/admin/hotels/edit/{id}(id=${hotel.id})} : @{/admin/hotels/add}"
+      th:object="${hotel}" method="post" class="editForm">
+    <div>
+        <label for="hotelname">호텔 이름:</label>
+        <input type="text" id="hotelname" th:field="*{hotelname}" required>
+    </div>
+    <div>
+        <label for="address">주소 :</label>
+        <input type="text" id="address" th:field="*{address}" required>
+    </div>
+    <div>
+        <label for="price">가격:</label>
+        <input type="number" id="price" th:field="*{price}" required>
+    </div>
+
+    <div>
+        <label for="count">재고:</label>
+        <input type="number" id="count" th:field="*{count}" required>
+    </div>
+
+
+    <div>
+        <label for="selDate">날짜:</label>
+        <input type="date" id="selDate" th:field="*{selDate}" required>
+    </div>
+
+    <button type="submit" th:text="${hotel.id} ? '수정' : '추가'"></button>
+</form>
+<a th:href="@{/admin/hotels}" class="joinBtn">호텔 목록</a>
+</body>
+</html>

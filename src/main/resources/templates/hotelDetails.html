@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>호텔 상세 정보</title>
+    <link rel="stylesheet" type="text/css" href="/details.css">
+</head>
+<body>
+<div class="container">
+    <h1>호텔 상세 정보</h1>
+    <p><strong>이름:</strong> <span th:text="${hotel.hotelname}"></span></p>
+    <p><strong>주소:</strong> <span th:text="${hotel.address}"></span></p>
+    <p><strong>가격:</strong> <span th:text="${hotel.price}"></span></p>
+    <p><strong>남은 방 수:</strong> <span th:text="${hotel.count}"></span></p>
+    <p><strong>예약 가능 날짜:</strong> <span th:text="${hotel.selDate}"></span></p>
+
+    <form th:action="@{/hotels/{id}/book(id=${hotel.id})}" method="post">
+        <input type="submit" value="예약하기"/>
+    </form>
+
+    <div class="actions">
+        <a th:href="@{/hotels}">호텔 목록으로 돌아가기</a>
+    </div>
+</div>
+</body>
+</html>

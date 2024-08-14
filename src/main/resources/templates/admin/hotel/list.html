@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>관리자-호텔 리스트</title>
+    <link rel="stylesheet" type="text/css" href="/list.css">
+</head>
+<body>
+    <h1>관리자-호텔 리스트</h1>
+    <table class="hotel-list-table">
+        <thead>
+        <tr>
+            <th>호텔 이름</th>
+            <th>주소</th>
+            <th>가격</th>
+            <th>방 재고</th>
+            <th>날짜</th>
+            <th>기타</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="hotel : ${hotels}">
+            <td th:text="${hotel.hotelname}"></td>
+            <td th:text="${hotel.address}"></td>
+            <td th:text="${hotel.price}"></td>
+            <td th:text="${hotel.count}"></td>
+            <td th:text="${hotel.selDate}"></td>
+
+
+            <td>
+                <a th:href="@{/admin/hotels/edit/{id}(id=${hotel.id})}">수정</a>
+                <form th:action="@{/admin/hotels/delete/{id}(id=${hotel.id})}" method="post">
+                    <button type="submit">삭제</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="btnBox">
+        <a th:href="@{/}">홈으로</a>
+        <a th:href="@{/admin/hotels/add}">새로운 호텔 추가</a>
+    </div>
+
+</body>
+</html>

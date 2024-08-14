@@ -1,0 +1,135 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+    color: #333;
+}
+
+tbody{
+    text-align:center;
+}
+
+h1 {
+    font-size: 28px;
+    color: #ff6b6b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.goToHome{
+    color: #ff6b6b;
+    text-decoration:none;
+    font-size:18px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.date-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.btn-search {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-search:hover {
+    background-color: #0056b3;
+}
+
+.hotel-list-table {
+    width:800px;
+    margin:40px auto;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.hotel-list-table th, .hotel-list-table td {
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.hotel-list-table th {
+    background-color: #0053ac;
+    color: #fff;
+    font-weight: bold;
+}
+
+.hotel-list-table td {
+    background-color: #f9f9f9;
+}
+
+.hotel-list-table tr:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+.btn-book {
+    color: #007bff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border: 1px solid #007bff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-book:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-action {
+    display: inline-block;
+    background-color: #ff5c5c;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-action:hover {
+    background-color: #ff3b3b;
+}
+
+.btnBox{
+    width:800px;
+    display:flex;
+    justify-content:space-between;
+    margin:0 auto;
+}
+
+a{
+    text-decoration:none;
+    color: #ff6b6b;
+    font-size:18px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>예약한 호텔</title>
+    <link rel="stylesheet" type="text/css" href="/list.css">
+</head>
+<body>
+<h1>예약한 호텔</h1>
+<table class="hotel-list-table">
+    <thead>
+    <tr>
+        <th>이름</th>
+        <th>주소</th>
+        <th>체크인 날짜</th>
+        <th>예약 취소</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${#lists.isEmpty(bookedHotels)}">
+        <td colspan="4">예약된 호텔이 없습니다</td>
+    </tr>
+    <tr th:each="hotel : ${bookedHotels}">
+        <td th:text="${hotel.hotelname}"></td>
+        <td th:text="${hotel.address}"></td>
+        <td th:text="${hotel.selDate}"></td>
+        <td>
+            <form th:action="@{/hotels/{id}/unbook(id=${hotel.id})}" method="post">
+                <button type="submit">예약 취소하기</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/}" class="goToHome">홈으로</a>
+</body>
+</html>

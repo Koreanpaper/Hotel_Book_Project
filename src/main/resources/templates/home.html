@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>여기서 자</title>
+    <link rel="stylesheet" type="text/css" href="/home.css">
+</head>
+<body>
+    <h1>여기서 자</h1>
+    <div th:if="${username}==null">
+        <a th:href="@{/login}">로그인</a>
+        <a th:href="@{/join}">회원가입</a>
+    </div>
+
+    <div th:if="${username}!=null">
+        <p class="userName">반갑습니다! <span th:text="${username}"></span>님!</p>
+
+
+
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Logout"/>
+        </form>
+    </div>
+
+    <div>
+        <a th:href="@{/hotels}">호텔 보기</a>
+    </div>
+
+    <div th:if="${isAdmin}">
+        <a th:href="@{/admin/hotels}">호텔 관리</a>
+    </div>
+
+</body>
+</html>

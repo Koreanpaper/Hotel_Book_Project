@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #ff6b6b;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ff3b3b;
+}
+
+div {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    text-align: center;
+}
+
+input[type="submit"] {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff3b3b;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+}
+
+.userName {
+    font-weight: 700;
+    font-size: 20px;
+}

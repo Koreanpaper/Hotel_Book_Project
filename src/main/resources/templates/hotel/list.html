@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>호텔 리스트</title>
+    <link rel="stylesheet" type="text/css" href="/list.css">
+</head>
+<body>
+<h1>호텔 리스트</h1>
+<form th:action="@{/hotels/list}" method="get" class="search-form">
+    <label for="dateInput">날짜를 선택하세요:</label>
+    <input type="date" id="dateInput" name="date" class="date-input"/>
+    <input type="submit" value="호텔 검색" class="btn-search"/>
+</form>
+
+<table class="hotel-list-table">
+    <thead>
+    <tr>
+        <th>호텔 이름</th>
+        <th>주소</th>
+        <th>가격</th>
+        <th>방 재고</th>
+        <th>날짜</th>
+        <th>예약 상태</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="hotel : ${hotels}">
+        <td th:text="${hotel.hotelname}"></td>
+        <td th:text="${hotel.address}"></td>
+        <td th:text="${hotel.price}"></td>
+        <td th:text="${hotel.count}"></td>
+        <td th:text="${hotel.selDate}"></td>
+        <td>
+            <span th:if="${#lists.contains(bookedHotelIds, hotel.id)}">
+                예약 완료
+            </span>
+            <span th:if="${!#lists.contains(bookedHotelIds, hotel.id) and hotel.count > 0}">
+                <a th:href="@{/hotels/{id}(id=${hotel.id})}" class="btn-book">예약 하러 고고씽</a>
+            </span>
+            <span th:if="${hotel.count == 0}">
+                품절
+            </span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="actions">
+    <a th:href="@{/hotels/booked}" class="btn-action">예약한 호텔 보기</a>
+    <a th:href="@{/}" class="btn-action">홈으로 가기</a>
+</div>
+</body>
+</html>
